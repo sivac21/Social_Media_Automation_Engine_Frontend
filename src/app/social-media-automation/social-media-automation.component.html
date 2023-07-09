@@ -1,0 +1,29 @@
+<div class="stepperContainer">
+  <mat-stepper style="background-color: #F0F4F4;">
+    <mat-step>
+      <ng-template matStepLabel>Content Generator</ng-template>
+      <app-content-generator></app-content-generator>
+      <div>
+        <button class="button1" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Feedback Analyzer</ng-template>
+      <app-review-analyzer></app-review-analyzer>
+      <div>
+        <button class="button2" mat-button matStepperPrevious>Back</button>
+        <button class="button1" mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Response Generator</ng-template>
+      <app-response-generator></app-response-generator>
+      <div>
+        <button class="button2" mat-button matStepperPrevious>Back</button>
+        <button class="button1" mat-button matStepperNext>Done</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

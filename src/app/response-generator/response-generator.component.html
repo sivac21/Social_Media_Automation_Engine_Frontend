@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="left-side">
+        <div class="outter-input">
+            <h1 style="color: #6f797a; font-weight:500">Customer Feedback</h1>
+            <div class="input">
+                <mat-form-field style="height: 100%; width: 100%;" appearance="fill">
+                    <textarea matInput [(ngModel)]="userInput" placeholder="Enter your input..." rows="19"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <button class="button" style="color:#3CCBDA;" mat-button (click)="submitForm()">Respond</button>
+    </div>
+
+    <div class="right-side">
+        <div class="outter-output">
+            <h1 class="response-title">Response to Customer</h1>
+            <div class="output">
+                <div *ngIf="loading">
+                    <p style="margin: 25px 25px 25px 25px; font-weight:500; font-size:larger">Loading...</p>
+                </div>
+                <div class="response-content" *ngIf="result">
+                    <div>{{ result }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+mat-toolbar {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.navbar {
+  background: #03031b;
+}
+
+.logo {
+  height: 40px;
+  /* Set the desired height for the logo */
+  width: auto;
+  /* Preserve the aspect ratio of the logo */
+  margin-right: 16px;
+  /* Add margin to create spacing */
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="left-side">
+        <div class="outter-input">
+            <h1 style="color: #6f797a; font-weight:500">Customer Feedback</h1>
+            <div class="input">
+                <mat-form-field style="height: 100%; width: 100%;" appearance="fill">
+                    <textarea matInput [(ngModel)]="userInput" placeholder="Enter your input..." rows="19"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <button class="button" style="color:#3CCBDA;" mat-button (click)="submitForm()">Analyze</button>
+    </div>
+
+    <div class="right-side">
+        <div class="outter-output">
+            <h1 style="color: #6f797a; font-weight:500">Feedback Analysis</h1>
+            <div class="output">
+                <div *ngIf="loading">
+                    <p style="margin: 25px 25px 25px 25px; font-weight:500; font-size:larger">Loading...</p>
+                </div>
+                <div style="margin: 25px 25px 25px 25px; font-weight:500" *ngIf="result1">
+                    <h3 style="font-size:larger; color: #6f797a;">Summary</h3>
+                    <p>{{ result1 }}</p>
+                </div>
+                <div style="margin: 25px; display: flex; align-items: center;" *ngIf="result2">
+                    <h3 style="font-size:larger; font-weight: 500; color: #6f797a; margin-right: 10px;">Sentiment:</h3>
+                    <p style="font-weight: 450; font-size:larger; "
+                        [style.color]="result2.includes('negative') ? 'red' : 'green'">
+                        {{ result2.includes('negative') ? 'NEGATIVE' : 'POSITIVE' }}
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

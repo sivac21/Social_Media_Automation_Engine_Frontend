@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="left-side">
+        <div class="outter-input">
+            <h1 style="color: #6f797a; font-weight:500">Input Data</h1>
+            <div class="input">
+                <mat-form-field style="height: 100%; width: 100%;" appearance="fill">
+                    <textarea matInput [(ngModel)]="userInput" placeholder="Enter your input..." rows="19"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+
+    <div class="center">
+        <button class="button" style="color:#3CCBDA;" mat-button (click)="submitForm()">Generate</button>
+    </div>
+
+    <div class="right-side">
+        <div class="outter-output">
+            <h1 style="color: #6f797a; font-weight:500">Social Media Content</h1>
+            <div class="output">
+                <div *ngIf="loading">
+                    <p style="margin: 25px 25px 25px 25px; font-weight:500; font-size:larger">Loading...</p>
+                </div>
+                <div style="margin: 25px 25px 25px 25px; font-weight:500" *ngIf="result">
+                    <p>{{ result.paragraph1 }}</p>
+                    <ul>
+                        <li *ngFor="let bullet of result.bullets">{{ bullet }}</li>
+                    </ul>
+                    <p>{{ result.paragraph2 }}</p>
+                    <p>{{ result.paragraph3 }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
